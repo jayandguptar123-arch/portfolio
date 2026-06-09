@@ -1,49 +1,132 @@
-.contact h2{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+.contact-section {
+    width: 100%;
+    max-width: 700px; /* Kept narrow for comfortable layout readability */
+    padding: 6rem 0 4rem 0;
 }
 
-.contact form{
-    max-width: 500px;
-    margin: auto;
+.sub-heading {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-desc {
+    max-width: 550px;
+    margin: 1.5rem auto 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.contact-container {
+    margin-top: 3.5rem;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   INPUT ELEMENT INTERACTIVES
+   ========================================================================== */
+.contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
-.contact input,
-.contact textarea{
-    padding: 15px;
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: var(--transition);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Prevents breaking horizontal container dimensions */
+    min-height: 120px;
+}
+
+/* Focused elements light up smoothly */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.02);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Placeholder font styling consistency */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #555861;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   SUBMIT BUTTON ACTION
+   ========================================================================== */
+.submit-btn {
+    background: var(--accent-gradient);
+    color: #fff;
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    font-weight: 500;
     border: none;
     border-radius: 8px;
-    background: #222;
-    color: white;
-}
-
-.contact textarea{
-    min-height: 150px;
-    resize: none;
-}
-
-.contact button{
-    padding: 12px;
-    background: #b74b4b;
-    border: none;
-    border-radius: 8px;
-    color: white;
+    padding: 1rem 2rem;
     cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+    width: 100%;
 }
 
-.contact button:hover{
-    background: white;
-    color: black;
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(59, 130, 246, 0.3);
 }
 
-.logo .translation {
-    font-size: 0.5em; /* Maakt de tekst kleiner */
-    opacity: 0.7;     /* Maakt het iets doorzichtiger */
-    display: block;   /* Zet de vertaling onder de Japanse tekens */
+.submit-btn i {
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+/* Little paper airplane tilt animation on hover */
+.submit-btn:hover i {
+    transform: translate(3px, -2px) rotate(15deg);
+}
+
+/* ==========================================================================
+   MOBILE SCALING
+   ========================================================================== */
+@media (max-width: 580px) {
+    .contact-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-section {
+        padding: 4rem 0 2rem 0;
+    }
 }

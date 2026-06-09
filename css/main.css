@@ -1,230 +1,340 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --bg-color: #0f1014;
+    --card-bg: #16171d;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-color: #3b82f6;      /* High-tech blue */
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --ff-heading: 'Syne', sans-serif;
+    --ff-body: 'DM Sans', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-*{
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
-    font-family: 'Roboto', sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    width: 100%;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--ff-body);
     min-height: 100vh;
-        background-color: #000000;
-    color: white;
-    background-image: 
-        radial-gradient(circle at 15% 25%, rgba(139, 69, 55, 0.2) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(139, 69, 55, 0.15) 0%, transparent 45%);
-    background-attachment: fixed;
     overflow-x: hidden;
-    
+    display: flex;
+    flex-direction: column;
 }
 
-/* HEADER */
-header{
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9%;
+    padding: 1.5rem 10%;
+    background: rgba(15, 16, 20, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* LOGO */
-.logo{
-    font-size: 2.5rem;
+.logo {
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
     font-weight: 800;
-    color: #990000;
-    transition: 0.3s;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.5px;
 }
 
-.logo:hover{
-    transform: scale(1.1);
+.logo span {
+    color: var(--accent-color);
 }
 
-/* NAV */
-nav a{
-    font-size: 1.2rem;
-    color: white;
+.nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
     margin-left: 2rem;
-    transition: 0.3s;
+    transition: var(--transition);
+    position: relative;
 }
 
-nav a:hover,
-nav a.active{
-    color: #380000;
-    border-bottom: 2px solid #460000;
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--text-main);
 }
 
-/* SECTION */
-section{
-    padding: 170px 9%;
+/* Bottom tracking line under navigation items */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: var(--transition);
 }
 
-/* HOME */
-.home{
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. HERO HERO SECTION STRUCTURE
+   ========================================================================== */
+.wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    margin-top: 80px; /* Offset fixed header */
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 4rem 0;
+    animation: fadeIn 1s ease-out;
+}
+
+.home-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.greeting {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+.home-content h1 {
+    font-family: var(--ff-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.home-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* Profile Image Glow Effect */
+.home-img {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    min-height: 100vh;
 }
 
-/* IMAGE */
-.home-img img{
-    width: 900px;
-    height: 300px;
-    border-radius: 45%;
-    box-shadow: 0 0 25px #811414;
-    transition: 0.3s;
+.img-box {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic modern shape */
+    overflow: hidden;
+    background: var(--accent-gradient);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    transition: var(--transition);
 }
 
-.home-img img:hover{
+.img-box:hover {
+    border-radius: 50%;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: luminosity; /* Blends nicely with dark interface */
+    transition: var(--transition);
+}
+
+.img-box:hover img {
+    mix-blend-mode: normal;
     transform: scale(1.05);
 }
 
-/* CONTENT */
-.home-content h1{
-    font-size: 4rem;
+/* ==========================================================================
+   4. INTERACTIVE ACTIONS (SOCIAL & BUTTONS)
+   ========================================================================== */
+.social-icons {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
 }
 
-.home-content h3{
-    font-size: 2rem;
-    margin: 10px 0;
-}
-
-.home-content p{
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-span{
-    color: #cf0000;
-}
-
-/* BUTTON */
-.btn{
-    background: #ff0000;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 10px #b95050;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #c41818,
-                0 0 50px #b41818,
-                0 0 100px #b41818;
-}
-
-/* SOCIAL ICONS */
-.social-icons{
-    margin: 20px 0;
-}
-
-.social-icons a{
+.social-icons a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #b74b4b;
+    width: 45px;
+    height: 45px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 50%;
-    margin-right: 10px;
-    font-size: 20px;
-    transition: 0.3s;
-    color: white;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.social-icons a:hover{
-    background: #b74b4b;
-    color: rgb(207, 207, 207);
-    transform: scale(1.2);
+.social-icons a:hover {
+    color: #fff;
+    background: var(--accent-gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
-img{
-    max-width: 100%;
-    height: auto;
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
 }
 
-/* MOBILE */
-@media (max-width: 768px){
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
 
-    nav{
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #2b2b2b;
-        width: 100%;
+.btn-primary {
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-main);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN & ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 968px) {
+    .home {
+        flex-direction: column-reverse; /* Puts image layout smoothly above text on phones */
         text-align: center;
-        padding: 20px 0;
+        gap: 2.5rem;
     }
-
-    nav a{
-        display: block;
-        margin: 15px 0;
-        font-size: 1.3rem;
-    }
-
-    .home{
+    
+    .home-content {
+        display: flex;
         flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-        padding-top: 120px;
+        align-items: center;
     }
 
-    .home-img img{
-        width: 200px;
+    .main-header {
+        padding: 1.2rem 5%;
     }
 
-    .home-content h1{
-        font-size: 2.5rem;
+    .wrapper {
+        padding: 0 5%;
     }
 
-    .home-content h3{
-        font-size: 1.5rem;
+    .home-content h1 {
+        font-size: 2.8rem;
     }
 
-    .home-content p{
-        font-size: 1rem;
-    }
-
-    .social-icons a{
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-
-    .btn{
-        width: 100%;
-        text-align: center;
+    .social-icons, .cta-group {
+        justify-content: center;
     }
 }
 
-body {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000000; /* Donkere basis */
-    color: white;
-    /* De subtiele gloed effecten: */
-    background-image: 
-        radial-gradient(circle at 15% 25%, rgba(139, 69, 55, 0.2) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(139, 69, 55, 0.15) 0%, transparent 45%);
-    background-attachment: fixed; /* De gloed blijft staan als je scrolt */
-    overflow-x: hidden; /* Voorkomt dat je per ongeluk naar opzij scrolt */
+@media (max-width: 480px) {
+    .img-box {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .nav-links a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
 }

@@ -1,119 +1,246 @@
-.about{
-    padding: 170px 9%;
-    text-align: center;
-}
-
-.about h2{
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.about p{
-    font-size: 1rem;
-    color: #5f0000;
-    line-height: 1.9;
-}
-
-.hobby-section{
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.hobby-container{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.hobby-box{
-    background: #000000;
-    padding: 20px;
-    border-radius: 10px;
-    width: 40%;
-}
-
-.hobby-box h4{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.hobby-box p{
-    font-size: 1rem;
-    color: #a80000;
-}
-
-/* Zorgt dat de hele sectie in het midden komt */
-.about-art-section {
-    margin-top: 50px;
-    padding: 20px;
-    text-align: center; /* Centreert de tekst */
-}
-
-/* Zet de foto-vakjes naast elkaar */
-.art-grid {
-    display: flex;
-    justify-content: center; /* Centreert de vakken */
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-/* Styling voor het vakje om de foto */
-.art-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(139, 69, 55, 0.4);
-    border-radius: 15px;
-    padding: 15px;
-    width: 350px; /* Breedte van je tekening-vak */
-}
-
-.art-card img {
-    width: 100%; /* Maakt de foto passend in het vakje */
-    height: auto;
-    border-radius: 10px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.art-card span {
-    color: #e27d60;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-/* De kaarten waar de tekeningen in zitten */
-.art-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(139, 69, 55, 0.4);
-    border-radius: 15px;
-    padding: 15px;
-    width: 350px;
-    transition: all 0.4s ease;
-    /* Subtiele glow om de kaart heen */
-    box-shadow: 0 0 15px rgba(139, 69, 55, 0.2);
-}
-
-/* De tekening zelf */
-.art-card img {
+.container {
     width: 100%;
-    height: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 0 4rem 0;
+}
+
+/* Common Section Layout */
+.about-section, .education-section, .hobbies-section {
+    margin-bottom: 7rem; /* Added spacious grouping margins */
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-header h2 {
+    font-family: var(--ff-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background: var(--accent-gradient);
+    margin: 0 auto 3rem auto;
     border-radius: 10px;
-    display: block;
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-    /* De glow die de lijnen van je tekening laat 'stralen' */
-    filter: drop-shadow(0 0 8px rgba(139, 69, 55, 0.6));
 }
 
-/* Effect als je er met je muis op gaat staan */
-.art-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(139, 69, 55, 1);
-    box-shadow: 0 0 30px rgba(139, 69, 55, 0.5);
+/* ==========================================================================
+   2. ABOUT ME CONTENT
+   ========================================================================== */
+.about-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-.art-card:hover img {
-    filter: drop-shadow(0 0 15px rgba(139, 69, 55, 0.9));
-    transform: scale(1.02);
-} 
+.about-content strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. EDUCATION TIMELINE ARCHITECTURE
+   ========================================================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+/* The vertical linking line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Indicators */
+.timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+}
+
+/* Highlight style for UNASAT state */
+.timeline-item.current .timeline-dot {
+    background: var(--text-main);
+    border-color: #3b82f6;
+    box-shadow: 0 0 12px #3b82f6;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+}
+
+.timeline-content h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   4. HOBBIES GRID WITH IMAGES
+   ========================================================================== */
+.subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-top: -2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    overflow: hidden; /* Clips image neatly into border radius */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.1);
+}
+
+/* Image scaling window */
+.hobby-image-wrapper {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0,0,0,0.2);
+}
+
+.hobby-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps aspect ratios safe and centered */
+    transition: var(--transition);
+    opacity: 0.85;
+}
+
+.hobby-card:hover .hobby-img {
+    transform: scale(1.05); /* Slight zoom accent on hover */
+    opacity: 1;
+}
+
+/* Text body padding inside card */
+.hobby-info-box {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hobby-icon {
+    font-size: 1.5rem;
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.hobby-card h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.hobby-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 4rem 1rem 2rem 1rem;
+    }
+
+    .about-section, .education-section, .hobbies-section {
+        margin-bottom: 5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1.05rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-content {
+        padding: 1.25rem 1.5rem;
+    }
+}
