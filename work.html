@@ -1,19 +1,23 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Work</title>
+    <title>My Work | Guptar Jayand</title>
 
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/work.css">
 </head>
-
 <body>
 
-<header>
-    <a href="index.html" class="logo" title="Guptar Jayand">Guptar Jayand</a>
-    <nav>
+<header class="main-header">
+    <a href="index.html" class="logo">Guptar J<span>.</span></a>
+    <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="work.html" class="active">Work</a>
@@ -21,44 +25,92 @@
     </nav>
 </header>
 
-<section class="work">
-
-    <h2>My Projects</h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-            <img src="img/project/portfolio.png" alt="Portfolio Website">
-
-            <h3>Portfolio Website</h3>
-
-            <p>
-                Created a personal portofolio website using HTML, CSS to showcase the projects i have worked on and my skills as a developer.
-            </p>
+<main class="wrapper">
+    <section class="work-section">
+        
+        <div class="section-header">
+            <span class="sub-heading">Portfolio</span>
+            <h2>Selected Projects</h2>
+            <div class="underline"></div>
         </div>
 
-        <div class="project-card">
-            <img src="img/project/mediproject.jpeg" alt="Smart Medical Box">
-            <h3>Smart Medical Box</h3>
+        <div class="projects-grid">
 
-            <p>
-                Me and my team designed and created a smart medical box project by using a arduino, sensors and other items that we needed to create the project.
-            </p>
+            <!-- Project 1: Portfolio -->
+            <article class="project-card">
+                <div class="project-img-wrapper">
+                    <!-- Fixed space in the image filename -->
+                    <img src="img/project/portfolio.png" alt="Portfolio Website Project Snapshot">
+                </div>
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A modern, fully responsive digital space engineered to showcase my engineering background. 
+                        Features clean Semantic HTML5 structure, modern layout properties, and fluid hover interactions.
+                    </p>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="proj-btn"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#" class="proj-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: Smart Medical Box -->
+            <article class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="img/project/mediproject.jpeg" alt="Smart Medical Box Prototype Snapshot">
+                </div>
+                <div class="project-info">
+                    <h3>Smart Medical Box</h3>
+                    <p>
+                        Collaborated in a development team to program and assemble a smart medicine dispenser. 
+                        Utilized microcontrollers and sensor hardware arrays to track dosage schedules and alert patients.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Arduino C++</span>
+                        <span>Hardware Sensors</span>
+                        <span>IoT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="proj-btn"><i class="fa-brands fa-github"></i> Case Study</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: Database Architectures -->
+            <article class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="img/project/mysqworkbench.png" alt="MySQL Database EER Schema Diagram">
+                </div>
+                <div class="project-info">
+                    <h3>Database Systems Architecture</h3>
+                    <p>
+                        Designed complete, scalable relational database structures inside MySQL Workbench. 
+                        Focused heavily on data normalization (1NF to 3NF), establishing complex foreign key constraints, and tuning query execution.
+                    </p>
+                    <div class="tech-tags">
+                        <span>MySQL</span>
+                        <span>Relational Schema</span>
+                        <span>SQL Tuning</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="proj-btn"><i class="fa-solid fa-database"></i> View Schemas</a>
+                    </div>
+                </div>
+            </article>
+
         </div>
+    </section>
+</main>
+ 
+    <footer class="main-footer">
+        <p>&copy; 2026 Guptar Jayand. Built with passion.</p>
+    </footer>
 
-        <div class="project-card">
-            <img src="img/project/mysqworkbench.png" alt="MySQL Workbench">
-
-            <h3>MySQL Workbench</h3>
-
-            <p>
-                I have experience using MySQL Workbench to design and manage databases for various projects, including creating tables, defining relationships, and writing SQL queries to manipulate data effectively.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-</body></html>
+</body>
+</html>

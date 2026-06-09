@@ -1,45 +1,152 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me | Guptar Jayand</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
-
 <body>
-<header>
-    <a href="index.html" class="logo" title="Guptar Jayand">Guptar Jayand</a>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="work.html">Work</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
 
-<section class="about">
-    <h2>About Me</h2>
-    <p>Hi again, i am a student at UNASAT pursuing a degree in Business Informatics.</p>
-    <p>I am sometime a quick learner and enjoy taking on new challenges.</p>
-    <p>For the future, i'm hoping to work in a field that allows me to apply my skills and continue learning.</p>
-    <p>I like to explore new technologies and stay updated with the latest industry trends.</p>
-</section>
+    <header class="main-header">
+        <a href="index.html" class="logo">Guptar J<span>.</span></a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<div class="hobby-container">
-    <h2 class="heading">My Hobbies</h2>
-    <div class="hobby-box">
-        <h4>Listening to Music</h4>
-        <p>I like to imagine myself in different worlds while listening to music.</p>
-    </div>
-</div>
-<div class="hobby-container">
-    <div class="hobby-box">
-        <h4>Watching Anime</h4>
-        <p>People think anime is just for kids, but it has a lot of depth and complexity. You can learn a lot from the storytelling and character development.</p>
-    </div>
-</div>
+    <main class="wrapper">
+        <div class="container">
+            
+            <!-- SECTION 1: ABOUT ME BIO -->
+            <section id="about" class="about-section">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="about-content">
+                    <p>Hi, I'm Guptar Jayand! I am born and raised in Nickerie. I spend my childhood there, and after i graduated from pre-university i made the deliberate move to Para to expand my horizons, pursue higher education, and chase my career goals in ICT.</p>
+                    <p>I am currently studying <strong>Business Informatics</strong> at UNASAT, where I am absorbing the critical skills and architectural knowledge needed to thrive at the intersection of business strategy and software development.</p>
+                    <p>My ultimate goal is to leverage my development skills to make a meaningful, innovative impact in the industry—while achieving the personal milestone of supporting my family financially.</p>
+                </div>
+            </section>
 
-</body></html>
+            <!-- SECTION 2: EDUCATION TIMELINE -->
+            <section id="education" class="education-section">
+                <div class="section-header">
+                    <h2>Education Journey</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Primary School</div>
+                        <div class="timeline-content">
+                            <h3>GLO Klein Henar</h3>
+                            <p>This was my first school that shaped my early educational foundation. I learned the basics of reading, writing, and etc.. Graduated in the year 2016 as the top student of the school.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Secondary School</div>
+                        <div class="timeline-content">
+                            <h3>Mulo Henar</h3>
+                            <p>This was my secondary school where I developed my critical thinking skills and interests in technology. I was so passionate about computers stuff that i often went to the ICT class during my free time. I graduated in the year 2021.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Pre-University</div>
+                        <div class="timeline-content">
+                            <h3>Scholengemeenschap Nickerie (SGN)</h3>
+                            <p>And after that i came to SGN. I chosed first the S packet but later switched to the Q2 packet. Because i found out that S was not the right fit for me. After that i graduated in the year 2025.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item current">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Present Day</div>
+                        <div class="timeline-content">
+                            <h3>UNASAT</h3>
+                            <p>Currently pursuing my Bachelor's degree in <strong>Business Informatics</strong>. I hope to contribute to innovative solutions in the field of technology and business.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: HOBBIES WITH IMAGES -->
+            <section id="hobbies" class="hobbies-section">
+                <div class="section-header">
+                    <h2>Things i do on my free time</h2>
+                    <div class="underline"></div>
+                </div>
+                
+                <div class="hobby-grid">
+                    
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdyVgbI-kNS20142Dj9jwxNLd7Suu6YpEkBbGADFYX65y1GZ8n0GsDxx9g38fPxdClkQVSLDGMxu9uduo" alt="Lofi music art concept" class="hobby-img">
+                        </div>
+                        <div class="hobby-info-box">
+                            <div class="hobby-icon"><i class="fa-solid fa-music"></i></div>
+                            <h3>Listening to Music</h3>
+                            <p>Music is my ultimate creative escape. I love diving into different genres; it helps me view problems from fresh perspectives.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRiiBVQfUr5MaHmResG2qH4DV3sEnRXt4fjNxqkKSD_7se-k1bn1p7VJ6RA37V6pYg0am_aFVaYLGPrMp4" alt="That Time I Got Reincarnated as a Slime anime artwork" class="hobby-img">
+                        </div>
+                        <div class="hobby-info-box">
+                            <div class="hobby-icon"><i class="fa-solid fa-film"></i></div>
+                            <h3>Adventure Anime</h3>
+                            <p>I gravitate toward high-stakes world-building narratives like <em>That Time I Got Reincarnated as a Slime</em> and <em>Kaiju No. 8</em>.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT6rYty2lE1SXKMf5Ay10Ev931gpQy-mDY19yZlmKnB9GBWJprJ4GyV2CvRZht75Z_TSmSCnwcl2oNnurs" alt="Fishing rod along a wide river in Suriname" class="hobby-img">
+                        </div>
+                        <div class="hobby-info-box">
+                            <div class="hobby-icon"><i class="fa-solid fa-fish"></i></div>
+                            <h3>Fishing</h3>
+                            <p>My favorite way to find peace in nature. It's a lesson in patience, which turns highly competitive when I go with my mom!</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSa5P1UW4CNyEQYF3jkjBgW8FaED3vSPD1czp2PHQ_3WSwYMoFur1LqRj6HpDDhf0b8y7wbVrBFUKCih58" alt="Baking a fresh rich chocolate cake" class="hobby-img">
+                        </div>
+                        <div class="hobby-info-box">
+                            <div class="hobby-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                            <h3>Baking</h3>
+                            <p>Just like programming, baking requires precise steps and inputs to build delicious cakes completely from scratch.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Guptar Jayand. Built with passion.</p>
+    </footer>
+
+</body>
+</html>
